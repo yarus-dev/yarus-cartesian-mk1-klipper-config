@@ -1,17 +1,6 @@
 #!/usr/bin/env bash
-
-CONFIG_PATH="${HOME}/yarus-cartesian-mk1-klipper-config"
-PRINTER_PATH="${HOME}/printer_data"
-PRINTER_CONFIG_PATH="${PRINTER_PATH}/config"
-
-KLIPPER_PATH="${HOME}/klipper"
-FRIX_BRANCH="main"
-
-
 set -eu
 export LC_ALL=C
-
-
 
 # Step 4: Put the new configuration files in place to be ready to start
 function install_config {
@@ -34,11 +23,7 @@ function install_config {
 }
 
 
-# Step 5: restarting Klipper
 function restart_klipper {
     echo "[POST-INSTALL] Restarting Klipper..."
     sudo systemctl restart klipper
 }
-
-install_config
-restart_klipper
